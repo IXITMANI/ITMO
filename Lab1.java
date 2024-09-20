@@ -1,5 +1,6 @@
 //import java.util.Arrays;
 
+
 public class Lab1 {
     public static void main(String[] args) {
         // NUM 1
@@ -20,31 +21,39 @@ public class Lab1 {
         //System.out.println(Arrays.toString(x));
         // NUM 3
         double z1[][] = new double[9][13];
+        for (int i = 0; i < 9; i++) {
+            for (int j = 0; j < 13; j++) { // начинаю пробегать по матрице
+                z1[i][j] = fillArray(z, x, i, j);
+            }
+        }
+        printArray(z1);
+    }
+    public static double fillArray(\long z[], double x[], int i, int j) {
+        double t;
         var e = Math.E; // записываю число е в переменную, чтобы не писать постоянно Math.E
+        boolean fl = false;
         int tmp[] = new int[4];
         tmp[0] = 15;
         tmp[1] = 19;
         tmp[2] = 21;
         tmp[3] = 23; // Создаю и заполняю массив для одного из условий
-        boolean fl = false;
-        for (int i = 0; i < 9; i++) {
-            for (int j = 0; j < 13; j++) { // начинаю пробегать по матрице
-                for (var k = 0; k < 4; k++) { // проверяю элемент на наличие его в массиве tmp
-                    if (z[i] == tmp[k]) { // если элемент есть в массиве, то "поднимаю флаг"
-                        fl = true;
-                    }
-                }
-
-                if (z[i] == 11) { // Само заполнение матрицы
-                    z1[i][j] = (Math.pow(e, (Math.pow(e, x[j])))) / 0.5;
-                } else if (fl) {
-                    z1[i][j] = Math.cbrt(Math.pow((2 / 3) * Math.pow(x[j], ((x[j] + 1) / x[j])), Math.tan(x[j])));
-                } else {
-                    z1[i][j] = Math.tan(Math.cbrt(Math.pow(Math.log(Math.abs(x[j])), (Math.pow(e, x[j]) / (Math.pow(e, x[j]) - 1)))));
-                }
-                fl = false; // Не забыть "опустить флаг"
+        for (var k = 0; k < 4; k++) { // проверяю элемент на наличие его в массиве tmp
+            if (z[i] == tmp[k]) { // если элемент есть в массиве, то "поднимаю флаг"
+                fl = true;
             }
         }
+
+        if (z[i] == 11) { // Само заполнение матрицы
+            t = (Math.pow(e, (Math.pow(e, x[j])))) / 0.5;
+        } else if (fl) {
+            t = Math.cbrt(Math.pow((2 / 3) * Math.pow(x[j], ((x[j] + 1) / x[j])), Math.tan(x[j])));
+        } else {
+            t = Math.tan(Math.cbrt(Math.pow(Math.log(Math.abs(x[j])), (Math.pow(e, x[j]) / (Math.pow(e, x[j]) - 1)))));
+        }
+        fl = false; // Не забыть "опустить флаг"
+        return t;
+    }
+    public static void printArray(double[][] z1) {
         for (int i = 0; i < 9; i++) {
             for (int j = 0; j < 13; j++) {
                 System.out.printf("| %8.2f ", z1[i][j]); //Пробегаю по матрице и красиво вывожу ее(с помощью форматированного вывода)
