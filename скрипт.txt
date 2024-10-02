@@ -43,3 +43,4 @@ echo "диеты Ergovore" >> tynamo
 echo "weigth=123.0 height=43.0 atk=10 def=8" > piloswine
 mkdir voltorb
 mkdir lucario
+cd ~
