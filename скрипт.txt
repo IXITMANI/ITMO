@@ -1,0 +1,45 @@
+mkdir lab0
+cd lab0
+echo "Способности  Focus Energy Ember Double Kick Peck
+Sand-Attack Bulk Up Quick Attack Blaze Kick Slash Brave Bird Sky
+Uppercut Flare Blitz" > blaziken4
+echo "weigth=142.9 height=43.0 ath=8
+def=11" > gligar6
+mkdir oshawott7
+cd oshawott7
+echo "Живет  Cave Urban" > banette
+echo "weigth=57.1 height=31.0
+atk=6 def=11" > glaceon
+echo "Возможности  Overland=12 Surface=1 Sky=6 Jump=6" > archeops
+echo "Power2=0 Intelligence=4 Fragile=0" >> archeops
+echo "Ходы Covet Foul Play Gravity Heal Bell Helping
+Hand Magic Coat Magic Room Recycle Role Play Signal Beam Skill Swap
+Sleep Talk Snatch Snore Trick Uproar Zen Headbutt
+surskitu" > krookodile
+mkdir azurill
+mkdir tirtouga
+cd ..
+mkdir shiftry6
+cd shiftry6
+echo "Развитые способности  Pickpocket" > seedot
+echo "Способности" > kakuna
+echo "Harden" >> kakuna
+echo "Ходы Covet Foul Play Gravity Heal Bell Helping
+Hand Magic Coat Magic Room Recycle Role Play Signal Beam Skill 
+Swap Sleep Talk Snatch Snore Trick Uproar Zen Headbutt" > gothitelle
+mkdir tirtouga
+mkdir arbok
+mkdir zigzagoon
+cd ..
+echo "weigth=3.7
+height=20.0 atk=3 def=3" > surskit1
+mkdir whirlpede8
+cd whirlpede8
+echo "satk=7 sdef=9
+spd=9" > klinklang
+echo "Развитые способности Leaf Guard Sap Sipper" > cherrim
+echo "Тип" > tynamo
+echo "диеты Ergovore" >> tynamo
+echo "weigth=123.0 height=43.0 atk=10 def=8" > piloswine
+mkdir voltorb
+mkdir lucario
