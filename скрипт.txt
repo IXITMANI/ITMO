@@ -43,4 +43,35 @@ echo "диеты Ergovore" >> tynamo
 echo "weigth=123.0 height=43.0 atk=10 def=8" > piloswine
 mkdir voltorb
 mkdir lucario
-cd ~
+cd ..
+chmod 044 blaziken4
+chmod 400 gligar6
+chmod 524 oshawott7
+cd oshawott7/
+chmod 640 banette
+chmod 305 azurill
+chmod 006 glaceon
+chmod 751 tirtouga
+chmod 404 archeops
+chmod 606 krookodile
+cd ..
+chmod 550 shiftry6
+cd shiftry6/
+chmod 006 seedot
+chmod 006 seedot
+chmod 640 kakuna
+chmod 357 tirtouga
+chmod 537 arbok/
+chmod 305 zigzagoon/
+chmod 404 gothitelle
+cd ..
+cd whirlpede8/
+chmod 064 klinklang
+chmod 375 voltorb/
+chmod 523 lucario/
+chmod 060 cherrim
+chmod 666 tynamo
+chmod 440 piloswine
+cd ..
+chmod 640 surskit1
+chmod 337 whirlpede8/
