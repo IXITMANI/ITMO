@@ -1,6 +1,6 @@
 package AtackPockemons;
 
-import Program.Lab2;
+import Program.utilik;
 import ru.ifmo.se.pokemon.*;
 
 public class Scald extends SpecialMove {
@@ -8,10 +8,11 @@ public class Scald extends SpecialMove {
         super(Type.WATER, pow, acc);
 
     }
+
     @Override
     protected void applyOppEffects(Pokemon p) {
         super.applyOppEffects(p);
-        if (Lab2.change(0.3)) {
+        if (utilik.change(0.3)) {
             Effect.burn(p);
         }
     }

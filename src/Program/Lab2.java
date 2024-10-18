@@ -23,7 +23,5 @@ public class Lab2 {
         b.go();
     }
 
-    public static boolean change(double d) {
-        return d > Math.random();
-    }
+
 }

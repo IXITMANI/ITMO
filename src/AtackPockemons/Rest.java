@@ -13,8 +13,8 @@ public class Rest extends StatusMove {
         super.applySelfEffects(p);
         Effect e = new Effect().condition(Status.SLEEP).turns(2);
         p.addEffect(e);
-        if (e.turn()){
-            e.stat(Stat.HP,(int) p.getStat(Stat.HP));
+        if (e.turn()) {
+            e.stat(Stat.HP, (int) p.getStat(Stat.HP));
             System.out.println(p.getStat(Stat.HP));
             p.addEffect(e);
         }

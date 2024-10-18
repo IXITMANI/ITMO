@@ -8,8 +8,8 @@ public class RazorLeaf extends PhysicalMove {
     }
 
     @Override
-    protected void applyOppDamage(Pokemon def, double damage){
-        super.applyOppDamage(def,damage);
+    protected void applyOppDamage(Pokemon def, double damage) {
+        super.applyOppDamage(def, damage);
     }
 
     @Override

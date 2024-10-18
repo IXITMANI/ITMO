@@ -16,6 +16,6 @@ public class Passimian extends Pokemon {
         FocusBlast focusBlast = new FocusBlast(120, 70);
         AerialAce aerialAce = new AerialAce(60, 100);
 
-        super.setMove(bulldoze,shadowBall,focusBlast,aerialAce);
+        super.setMove(bulldoze, shadowBall, focusBlast, aerialAce);
     }
 }

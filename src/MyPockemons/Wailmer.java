@@ -11,12 +11,12 @@ public class Wailmer extends Pokemon {
         super(name, lvl);
 
         super.setType(Type.WATER);
-        super.setStats(130,70,35,70,35,60);
+        super.setStats(130, 70, 35, 70, 35, 60);
 
         Bulldoze bulldoze = new Bulldoze(60, 100);
-        Blizzard blizzard = new Blizzard(110,70);
-        Scald scald = new Scald(80,100);
-        super.setMove(blizzard, bulldoze,scald);
+        Blizzard blizzard = new Blizzard(110, 70);
+        Scald scald = new Scald(80, 100);
+        super.setMove(blizzard, bulldoze, scald);
 
     }
 }
