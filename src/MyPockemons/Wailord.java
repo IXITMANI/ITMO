@@ -17,7 +17,7 @@ public class Wailord extends Wailmer {
         Blizzard blizzard = new Blizzard(110, 70);
         Scald scald = new Scald(80, 100);
         NobleRoar nobleRoar = new NobleRoar(0,100);
-        super.setMove(blizzard, bulldoze, scald);
+        super.setMove(blizzard, bulldoze, scald,nobleRoar);
 
 
     }

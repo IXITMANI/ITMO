@@ -3,8 +3,8 @@ package AtackPockemons;
 import ru.ifmo.se.pokemon.*;
 
 public class Rest extends StatusMove {
-    public Rest(double pow, double acc) {
-        super(Type.NORMAL, pow, acc);
+    public Rest() {
+        super.type = Type.PSYCHIC;
 
     }
 

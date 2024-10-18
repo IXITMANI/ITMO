@@ -1,8 +1,6 @@
 package MyPockemons;
 
-import AtackPockemons.Bulldoze;
-import AtackPockemons.FocusBlast;
-import AtackPockemons.ShadowBall;
+import AtackPockemons.*;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.Type;
 
@@ -16,8 +14,8 @@ public class Passimian extends Pokemon {
         Bulldoze bulldoze = new Bulldoze(60, 100);
         ShadowBall shadowBall = new ShadowBall(80, 100);
         FocusBlast focusBlast = new FocusBlast(120, 70);
+        AerialAce aerialAce = new AerialAce(60, 100);
 
-        super.setMove(focusBlast);
-
+        super.setMove(bulldoze,shadowBall,focusBlast,aerialAce);
     }
 }

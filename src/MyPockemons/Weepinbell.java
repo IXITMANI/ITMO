@@ -15,7 +15,7 @@ public class Weepinbell extends Bellsprout {
 
         RazorLeaf razorLeaf = new RazorLeaf(55, 95);
         SludgeBomb sludgeBomb = new SludgeBomb(90, 100);
-        Growth growth = new Growth(0, 0);
+        Growth growth = new Growth();
         super.setMove(razorLeaf, sludgeBomb, growth);
 
 

@@ -3,8 +3,8 @@ package AtackPockemons;
 import ru.ifmo.se.pokemon.*;
 
 public class Growth extends StatusMove {
-    public Growth(double pow, double acc) {
-        super(Type.NORMAL, pow, acc);
+    public Growth() {
+        super.type = Type.NORMAL;
 
     }
 

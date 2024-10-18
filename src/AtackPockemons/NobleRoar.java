@@ -10,7 +10,7 @@ public class NobleRoar extends StatusMove {
     @Override
     protected void applyOppEffects(Pokemon p) {
         super.applyOppEffects(p);
-        Effect e = new Effect().stat(Stat.SPECIAL_ATTACK, -1).stat(Stat.ATTACK, -1);
+        Effect e = new Effect().stat(Stat.SPECIAL_ATTACK, -1).stat(Stat.ATTACK, -1).turns(6);
         p.addEffect(e);
     }
 

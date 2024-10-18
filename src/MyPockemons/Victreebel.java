@@ -15,8 +15,8 @@ public class Victreebel extends Weepinbell {
 
         RazorLeaf razorLeaf = new RazorLeaf(55, 95);
         SludgeBomb sludgeBomb = new SludgeBomb(90, 100);
-        Growth growth = new Growth(0, 1);
-        Rest rest = new Rest(0,1);
+        Growth growth = new Growth();
+        Rest rest = new Rest();
         super.setMove(razorLeaf,sludgeBomb,growth,rest);
 
     }

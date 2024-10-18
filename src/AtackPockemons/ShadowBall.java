@@ -11,7 +11,7 @@ public class ShadowBall extends SpecialMove {
     @Override
     protected void applyOppDamage(Pokemon def, double damage) {
         super.applyOppDamage(def, damage);
-            Effect e = new Effect().chance(0.2).turns(-1).stat(Stat.SPECIAL_DEFENSE, -1);
+            Effect e = new Effect().chance(0.2).turns(6).stat(Stat.SPECIAL_DEFENSE, -1);
             def.addEffect(e);
             System.out.println(def.toString() + " looses 1 special defense");
         }
