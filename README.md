@@ -13,4 +13,7 @@
 <ul>
     <li><h3><a href = "https://github.com/IXITMANI/ITMO/tree/Opd_lab1">Лабораторная работа №1</a></h3></li>
 </ul>
-
+<h2>Линал</h2>
+<ul>
+    <li><h3><a href = "https://github.com/IXITMANI/ITMO/tree/Linal_TM_1">ТМ №1</a></h3></li>
+</ul>
