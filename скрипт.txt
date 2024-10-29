@@ -75,3 +75,35 @@ chmod 440 piloswine
 cd ..
 chmod 640 surskit1
 chmod 337 whirlpede8/
+ln -s whirlpede8/ Copy_96
+chmod u+r whirlpede8 
+ln -s ./blaziken4 ~/lab0/whirlpede8/piloswineblaziken 
+chmod u-r whirlpede8
+cd shiftry6/
+chmod u+w arbok/
+cd ..
+cp ./gligar6 ~/lab0/shiftry6/arbok/
+cd shiftry6/
+chmod u+w arbok/
+cd ..
+cp ./blaziken4 ~/lab0/whirlpede8/cherrimblaziken
+ln ./gligar6 ~/lab0/whirlpede8/cherrimgligar
+cat oshawott7/banette oshawott7/krookodile > gligar6_62
+chmod u+r oshawott7/azurill/ oshawott7/glaceon
+cp -r ./oshawott7 ~/lab0/shiftry6/zigzagoon
+chmod u-r oshawott7/azurill/ oshawott7/glaceon
+chmod u-r ~/lab0/shiftry6/zigzagoon/oshawott7/azurill/ ~/lab0/shiftry6/zigzagoon/oshawott7/glaceon
+mkdir tmp
+cd tmp
+echo >count
+cd ..
+wc -m surskit1 > /tmp/count 2>/dev/null
+chmod u+r whirlpede8/
+ls -l whirlpede8 | sort -k 2 -n -r
+chmod u-r whirlpede8/
+ls -ld *n */*n */*/*n | sort -r
+ls -ldt b* */b* */*/b* | sort -r | head -n 3
+chmod u+r whirlpede8/ whirlpede8/klinklang shiftry6/seedot
+cat oshawott7/banette oshawott7/glaceon oshawott7/archeops oshawott7/krookodile shiftry6/seedot shiftry6/kakuna shiftry6/gothitelle whirlpede8/klinklang | grep -v 'r$'
+chmod u-r whirlpede8/klinklang whirlpede8/ shiftry6/seedot
+cat -n blaziken4 | grep -v 'k$'
