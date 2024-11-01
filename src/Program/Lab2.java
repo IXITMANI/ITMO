@@ -2,13 +2,11 @@ package Program;
 
 import MyPockemons.*;
 import ru.ifmo.se.pokemon.Battle;
-import ru.ifmo.se.pokemon.Pokemon;
 
 public class Lab2 {
     public static void main(String[] args) {
 
         Battle b = new Battle();
-        Pokemon p = new Pokemon();
         Passimian p1 = new Passimian("coconat", 1);
         Wailmer p2 = new Wailmer("poka", 1);
         Wailord p3 = new Wailord("tomato", 1);

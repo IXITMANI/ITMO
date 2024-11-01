@@ -17,7 +17,6 @@ public class Bulldoze extends PhysicalMove {
     }
 
 
-
     @Override
     protected String describe() {
         String[] place = this.getClass().toString().split("\\.");
