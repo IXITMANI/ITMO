@@ -5,3 +5,4 @@ public class utilik {
         return d > Math.random();
     }
 }
+
