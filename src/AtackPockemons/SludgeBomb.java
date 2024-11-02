@@ -1,6 +1,6 @@
 package AtackPockemons;
 
-import Program.utilik;
+import Program.Utilik;
 import ru.ifmo.se.pokemon.Effect;
 import ru.ifmo.se.pokemon.Pokemon;
 import ru.ifmo.se.pokemon.SpecialMove;
@@ -13,7 +13,7 @@ public class SludgeBomb extends SpecialMove {
 
     protected void applyOppEffects(Pokemon p) {
         super.applyOppEffects(p);
-        if (utilik.change(0.3)) {
+        if (Utilik.change(0.3)) {
             Effect.poison(p);
         }
     }

@@ -1,7 +1,7 @@
 package AtackPockemons;
 
 import ru.ifmo.se.pokemon.*;
-import Program.utilik;
+import Program.Utilik;
 
 public class Blizzard extends SpecialMove {
     public Blizzard(double pow, double acc) {
@@ -12,7 +12,7 @@ public class Blizzard extends SpecialMove {
     @Override
     protected void applyOppEffects(Pokemon p) {
         super.applyOppEffects(p);
-        if (utilik.change(0.1)) {
+        if (Utilik.change(0.1)) {
             Effect.freeze(p);
         }
     }
