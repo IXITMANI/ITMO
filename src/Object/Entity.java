@@ -3,8 +3,6 @@ package Object;
 import Enums.Action;
 import Interfaces.Property;
 
-import java.io.Serializable;
-
 public class Entity extends Obj implements Property {
 
     @Override
@@ -13,21 +11,19 @@ public class Entity extends Obj implements Property {
     }
 
     final private String name;
-    final private String gender;
 
-    public Entity(String name, String gender) {
+    public Entity(String name) {
         super(name);
         this.name = name;
-        this.gender = gender;
     }
 
     public void doSomething(Action act) {
         switch (act) {
             case Action.say:
-                System.out.println(super.name + " сказал");
+                System.out.print(super.name + " сказал ");
                 break;
             case Action.went:
-                System.out.println(super.name + " пришел");
+                System.out.print(super.name + " пришел ");
                 break;
             default:
                 System.out.println("Ты даун?");
@@ -37,12 +33,12 @@ public class Entity extends Obj implements Property {
 
     public void doSomething(Action act, Obj obj) {
         doSomething(act);
-        System.out.println(obj);
+        System.out.println(obj.name);
     }
 
     @Override
     public void propertyes(String property) {
-        super.name = " " + property + " " + this.name;
+        super.name = property + " " + this.name;
     }
 
 }
