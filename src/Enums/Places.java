@@ -1,5 +1,5 @@
 package Enums;
 
 public enum Places {
-    castle, street, nearCastle
+    castle, street, nearCastle, hall, None
 }

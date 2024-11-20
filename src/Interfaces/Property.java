@@ -1,5 +1,7 @@
 package Interfaces;
 
+import Enums.Properties;
+
 public interface Property {
-    public void propertyes(String property);
+    public void properties(Properties property);
 }
