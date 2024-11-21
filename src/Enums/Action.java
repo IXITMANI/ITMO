@@ -2,7 +2,12 @@ package Enums;
 
 public enum Action {
     say,
+    see,
     went,
-    run,
-
+    fly,
+    dance,
+    serving,
+    forgot,
+    eat,
+    know,
 }

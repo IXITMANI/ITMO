@@ -2,14 +2,22 @@ package Enums;
 
 public enum Properties {
     BEAUTIFUL("Красивый"),
-    LIGHT("Лёгкий");
+    LIGHT("Лёгкий"),
+    STEP("Сводный"),
+    None("");
 
 
-    final String title;
+    final String property;
 
-    Properties(String title) {
-        this.title = title;
+    Properties(String property) {
+        this.property = property;
     }
 
+    public String getProperty() {
+        return property;
+    }
 
+    public boolean notNone() {
+        return !property.isEmpty();
+    }
 }

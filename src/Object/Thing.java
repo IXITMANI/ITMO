@@ -5,7 +5,7 @@ import Enums.Places;
 import java.util.Objects;
 
 public class Thing extends Obj {
-
+    protected int count;
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -24,12 +24,14 @@ public class Thing extends Obj {
         return name;
     }
 
-    final private String name;
-    final private Places place;
     public Thing(String name, Places place) {
         super(name, place);
-        this.name = name;
+    }
+    public Thing(String name, Places place,int count) {
+        super(name, place);
+        this.count = count;
+    }
+    public void Move(Places place){
         this.place = place;
     }
-
 }
