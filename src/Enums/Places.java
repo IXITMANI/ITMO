@@ -1,10 +1,12 @@
 package Enums;
 
 public enum Places {
-    hall,
-    street,
-    nearCastle,
-    None,
-    kitchen,
-    table,
+    MidLine,
+    BottomLine,
+    TopLine,
+    Tavern,
+    Fountain,
+    Forest,
+
+
 }

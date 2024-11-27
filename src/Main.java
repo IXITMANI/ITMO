@@ -1,84 +1,60 @@
-import Enums.Action;
-import Enums.Mood;
+import Enums.Items;
 import Enums.Places;
-import Enums.Properties;
 import Object.*;
-
+import Util.*;
+//Radiant(Pudge, Monkey King, Spirit Breaker, Kez, Hoodwink)
+//dire(Crystal Maiden, Lina, Luna, AntiMage, Shadow Shaman)
 /*
- * Слуги доложили принцу, что на бал приехала прекрасная богатая незнакомка.
- * Он поспешил встретить ее и проводить во дворец.
- * Легкий шепот изумления и восторга пробежал по залу. Все взгляды были прикованы к красавице.
- * Старый король шепнул королеве, что он уже много лет не видел такого чуда.
- * Дамы внимательно рассматривали ее наряд, стараясь не упустить ни одной мелочи, чтобы завтра же заказать себе такой же, если им только это удастся.
- * Принц пригласил ее на танец.
- * Одно удовольствие было смотреть, как она танцует.
- * Подали ужин, но принц совсем забыл про еду, его глаза не отрывались от глаз прекрасной незнакомки.
- * Она села рядом со своими сводными сестрами и угостила их экзотическими фруктами из корзинки, которую преподнес ей принц.
- * Они зарделись от удовольствия, удостоившись такой чести, но не узнали Золушку.
- */
+Мк дает SS с мида, что ЦМ gang нижний лайн.
+Команда radiant начинает стягиваться на нижний лайн
+Пудж хукнул ее.
+Команда пуджа замерзла из-за аганимного ультимейта цм.
+Dire внимательно смотрели как умирает команда radiant.
+Пудж начал хавать Цм.
+Spirit breaker дал сыр Pudge, но сам погиб.
+Шаман застилил крипа у ам.
+Ам сломал ПТ.
+Прошло время...
+Цм возрадилась и заметила что у нее много голды.
+Цм купила сестрам по муншарду.
+Time = 40min, Ам купил бф => цм сломала шмотки.
+*/
 
 public class Main {
     public static void main(String[] args) {
-        Entity servant = new Entity("Слуга", Places.nearCastle);
-        Entity prince = new Entity("Принц", Places.hall);
-        Entity stranger = new Entity("Незнакомка", Places.street);
-        Entity king = new Entity("Король", Places.hall);
-        Entity queen = new Entity("Королева", Places.hall);
-        Entity peoples = new Entity("Народ", Places.hall);
-        Entity sisters = new Entity("Сёстры", Places.table);
-        sisters.reasoning("Cinderella");
-        //Слуги доложили принцу, что на бал приехала прекрасная богатая незнакомка.
-        stranger.properties(Properties.BEAUTIFUL);
-        stranger.doSomething(Action.went, Places.nearCastle);
-        servant.doSomething(Action.see, stranger);
-        servant.doSomething(Action.went, Places.hall);
-        servant.doSomething(Action.say, prince);
-        System.out.println();
-        //Он поспешил встретить ее и проводить во дворец.
-        prince.doSomething(Action.went, stranger);
-        prince.doSomething(Action.went, stranger, Places.hall);
-        System.out.println();
-        //Легкий шепот изумления и восторга пробежал по залу. Все взгляды были прикованы к красавице.
-        Entity whisper = new Entity("Шёпот");
-        whisper.properties(Properties.LIGHT);
-        whisper.doSomething(Action.fly, Places.hall);
-        peoples.doSomething(Action.see, stranger);
-        peoples.attitude(Mood.shocked);
-        System.out.println();
-        // Старый король шепнул королеве, что он уже много лет не видел такого чуда.
-        king.doSomething(Action.see, stranger);
-        king.reasoning("уже много лет не видел такого чуда");
-        king.doSomething(Action.say, queen);
-        System.out.println();
-        //Дамы внимательно рассматривали ее наряд, стараясь не упустить ни одной мелочи, чтобы завтра же заказать себе такой же, если им только это удастся.
-        peoples.doSomething(Action.see, stranger);
-        peoples.reasoning("завтра же заказать себе такой же");
-        System.out.println();
-        //Принц пригласил ее на танец.
-        prince.doSomething(Action.dance, stranger);
-        System.out.println();
-        // Одно удовольствие было смотреть, как она танцует.
-        peoples.doSomething(Action.see, stranger);
-        peoples.attitude(Mood.good);
-        System.out.println();
-        // Подали ужин, но принц совсем забыл про еду, его глаза не отрывались от глаз прекрасной незнакомки.
-        Thing supper = new Thing("Ужин", Places.kitchen);
-        servant.doSomething(Action.went, Places.kitchen);
-        servant.doSomething(Action.serving, supper);
-        prince.doSomething(Action.see, supper);
-        prince.doSomething(Action.forgot);
-        prince.doSomething(Action.see, stranger);
-        System.out.println();
-        // Она села рядом со своими сводными сестрами и угостила их экзотическими фруктами из корзинки, которую преподнес ей принц.
-        sisters.properties(Properties.STEP);
-        Thing fruits = new Thing("Фрукты",Places.kitchen, 101);
-        prince.doSomething(Action.went,Places.kitchen);
-        prince.doSomething(Action.serving, fruits);
-        stranger.doSomething(Action.went, sisters);
-        sisters.doSomething(Action.eat,fruits);
-        System.out.println();
-        // Они зарделись от удовольствия, удостоившись такой чести, но не узнали Золушку.
-        sisters.attitude(Mood.blush);
-        sisters.doSomething(Action.know,stranger);
+        CrystalMaiden crystalMaiden = new CrystalMaiden("Crystal Maiden", Places.MidLine, 1250);
+        Lina lina = new Lina("Lina", Places.Tavern, 2000);
+        Luna luna = new Luna("Luna", Places.TopLine, 2900);
+        AntiMage antiMage = new AntiMage("AntiMage", Places.Forest, 2200);
+        ShadowShaman shadowShaman = new ShadowShaman("Shadow Shaman", Places.Forest, 2400);
+        Pudge pudge = new Pudge("Pudge", Places.BottomLine, 3000);
+        SpiritBreaker spiritBreaker = new SpiritBreaker("Spirit Breaker", Places.TopLine, 2810);
+        MonkeyKing monkeyKing = new MonkeyKing("Monkey King", Places.MidLine, 2400);
+        Kez kez = new Kez("Kez", Places.Forest, 2600);
+        Hoodwink hoodwink = new Hoodwink("Hoodwink", Places.BottomLine, 2450);
+
+        Persons[] dire = {crystalMaiden, lina, luna, antiMage, shadowShaman};
+        Persons[] radiant = {pudge, monkeyKing, kez, hoodwink, spiritBreaker};
+        Persons[] characters = {crystalMaiden, lina, luna, antiMage, shadowShaman, pudge, monkeyKing, kez, hoodwink, spiritBreaker};
+
+        crystalMaiden.go(Places.BottomLine);
+        monkeyKing.miss(crystalMaiden);
+        monkeyKing.go(Places.BottomLine);
+        pudge.MeatHook(crystalMaiden);
+        spiritBreaker.go(Places.BottomLine);
+        kez.go(Places.BottomLine);
+        crystalMaiden.FreezingField(radiant);
+        spiritBreaker.UseCheese(pudge);
+        crystalMaiden.Frostbite(spiritBreaker);
+        pudge.Dismember(crystalMaiden);
+        shadowShaman.killCreep();
+        antiMage.brokenItem(Items.PowerTreads);
+        Maps.MapTimeSkip(characters, 9);
+        System.out.println("crystalMaiden has " + crystalMaiden.getGold() + " gold");
+        crystalMaiden.buyFor(Items.Moonshard, lina);
+        crystalMaiden.buyFor(Items.Moonshard, luna);
+        Maps.MapTimeSkip(characters, 1);
+        antiMage.buy(Items.BattleFury);
+        crystalMaiden.brokenItems();
     }
 }
