@@ -1,7 +1,7 @@
-import Enums.Items;
-import Enums.Places;
-import Object.*;
-import Util.*;
+import enums.Items;
+import enums.Places;
+import object.*;
+import util.*;
 //Radiant(Pudge, Monkey King, Spirit Breaker, Kez, Hoodwink)
 //dire(Crystal Maiden, Lina, Luna, AntiMage, Shadow Shaman)
 /*
@@ -22,39 +22,39 @@ Time = 40min, Ам купил бф => цм сломала шмотки.
 
 public class Main {
     public static void main(String[] args) {
-        CrystalMaiden crystalMaiden = new CrystalMaiden("Crystal Maiden", Places.MidLine, 1250);
-        Lina lina = new Lina("Lina", Places.Tavern, 2000);
-        Luna luna = new Luna("Luna", Places.TopLine, 2900);
-        AntiMage antiMage = new AntiMage("AntiMage", Places.Forest, 2200);
-        ShadowShaman shadowShaman = new ShadowShaman("Shadow Shaman", Places.Forest, 2400);
-        Pudge pudge = new Pudge("Pudge", Places.BottomLine, 3000);
-        SpiritBreaker spiritBreaker = new SpiritBreaker("Spirit Breaker", Places.TopLine, 2810);
-        MonkeyKing monkeyKing = new MonkeyKing("Monkey King", Places.MidLine, 2400);
-        Kez kez = new Kez("Kez", Places.Forest, 2600);
-        Hoodwink hoodwink = new Hoodwink("Hoodwink", Places.BottomLine, 2450);
+        CrystalMaiden crystalMaiden = new CrystalMaiden("Crystal Maiden", Places.MID_LINE, 1250, 54);
+        Lina lina = new Lina("Lina", Places.TAVERN, 2000, 59);
+        Luna luna = new Luna("Luna", Places.TOP_LINE, 2900, 56);
+        AntiMage antiMage = new AntiMage("AntiMage", Places.FOREST, 2200, 57);
+        ShadowShaman shadowShaman = new ShadowShaman("Shadow Shaman", Places.FOREST, 2400, 72);
+        Pudge pudge = new Pudge("Pudge", Places.BOTTOM_LINE, 3000, 76);
+        SpiritBreaker spiritBreaker = new SpiritBreaker("Spirit Breaker", Places.TOP_LINE, 2810, 69);
+        MonkeyKing monkeyKing = new MonkeyKing("Monkey King", Places.MID_LINE, 2400, 57);
+        Kez kez = new Kez("Kez", Places.FOREST, 2600, 55);
+        Hoodwink hoodwink = new Hoodwink("Hoodwink", Places.BOTTOM_LINE, 2450, 53);
+        Creep koboldForeman = new Creep(400, 21);
 
-        Persons[] dire = {crystalMaiden, lina, luna, antiMage, shadowShaman};
-        Persons[] radiant = {pudge, monkeyKing, kez, hoodwink, spiritBreaker};
-        Persons[] characters = {crystalMaiden, lina, luna, antiMage, shadowShaman, pudge, monkeyKing, kez, hoodwink, spiritBreaker};
+        Hero[] dire = {crystalMaiden, lina, luna, antiMage, shadowShaman};
+        Hero[] radiant = {pudge, monkeyKing, kez, hoodwink, spiritBreaker};
+        Hero[] characters = {crystalMaiden, lina, luna, antiMage, shadowShaman, pudge, monkeyKing, kez, hoodwink, spiritBreaker};
 
-        crystalMaiden.go(Places.BottomLine);
+        crystalMaiden.go(Places.BOTTOM_LINE);
         monkeyKing.miss(crystalMaiden);
-        monkeyKing.go(Places.BottomLine);
         pudge.MeatHook(crystalMaiden);
-        spiritBreaker.go(Places.BottomLine);
-        kez.go(Places.BottomLine);
+        spiritBreaker.go(Places.BOTTOM_LINE);
+        kez.go(Places.BOTTOM_LINE);
         crystalMaiden.FreezingField(radiant);
         spiritBreaker.UseCheese(pudge);
         crystalMaiden.Frostbite(spiritBreaker);
         pudge.Dismember(crystalMaiden);
-        shadowShaman.killCreep();
-        antiMage.brokenItem(Items.PowerTreads);
+        koboldForeman.killCreep(shadowShaman);
+        antiMage.brokenItem(Items.POWER_TREADS);
         Maps.MapTimeSkip(characters, 9);
         System.out.println("crystalMaiden has " + crystalMaiden.getGold() + " gold");
-        crystalMaiden.buyFor(Items.Moonshard, lina);
-        crystalMaiden.buyFor(Items.Moonshard, luna);
+        crystalMaiden.buyFor(Items.MOONSHARD, lina);
+        crystalMaiden.buyFor(Items.MOONSHARD, luna);
         Maps.MapTimeSkip(characters, 1);
-        antiMage.buy(Items.BattleFury);
+        antiMage.buy(Items.BATTLE_FURY);
         crystalMaiden.brokenItems();
     }
 }
