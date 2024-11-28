@@ -54,7 +54,9 @@ public class Main {
         crystalMaiden.buyFor(Items.MOONSHARD, lina);
         crystalMaiden.buyFor(Items.MOONSHARD, luna);
         Maps.MapTimeSkip(characters, 1);
-        antiMage.buy(Items.BATTLE_FURY);
-        crystalMaiden.brokenItems();
+        if (Maps.getTime() == 40) {
+            antiMage.buy(Items.BATTLE_FURY);
+            crystalMaiden.brokenItems();
+        }
     }
 }
