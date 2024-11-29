@@ -1,6 +1,6 @@
 package interfaces;
 
-public interface Damageble {
+public interface Damageable {
     void damage(int damage);
 
     void heal(int heal);

@@ -6,7 +6,10 @@ import enums.Places;
 import interfaces.*;
 import util.Maps;
 
-public abstract class Hero implements Damageble, Buyble, Moveble, Effectable, Missable, Brokenble {
+import java.util.Arrays;
+import java.util.Objects;
+
+public abstract class Hero implements Damageable, Buyable, Moveable, Effectable, Missable, Brokenable, CanFarm {
     protected int damage;
     protected final String name;
     protected Places place;
@@ -16,7 +19,9 @@ public abstract class Hero implements Damageble, Buyble, Moveble, Effectable, Mi
     public Items[] inv = new Items[6];
     protected Effects effect;
 
-    private int i = 0;
+    private int itemIndex = 0;
+
+
 
     public Hero(String name, Places place, int HP, int damage) {
         this.name = name;
@@ -25,6 +30,27 @@ public abstract class Hero implements Damageble, Buyble, Moveble, Effectable, Mi
         this.HP = this.MaxHP;
         this.damage = damage;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hero hero = (Hero) o;
+        return damage == hero.damage && HP == hero.HP && MaxHP == hero.MaxHP && gold == hero.gold && itemIndex == hero.itemIndex && Objects.equals(name, hero.name) && place == hero.place && Objects.deepEquals(inv, hero.inv) && effect == hero.effect;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(damage, name, place, HP, MaxHP, gold, Arrays.hashCode(inv), effect, itemIndex);
+    }
+
+    @Override
+    public String toString(){
+        return this.name + " in " + this.getPlace() + " have HP = " + this.getHP() + " have gold = " + this.getGold();
+    }
+
+
+    public abstract int goldCost();
 
     public Places getPlace() {
         return place;
@@ -49,10 +75,11 @@ public abstract class Hero implements Damageble, Buyble, Moveble, Effectable, Mi
     public int getGold() {
         return gold;
     }
+
     public void addItem(Items item) {
-        inv[i] = item;
-        i++;
-        i = i % 6;
+        inv[itemIndex] = item;
+        itemIndex++;
+        itemIndex = itemIndex % 6;
     }
 
     public Items[] getInv() {
@@ -150,6 +177,11 @@ public abstract class Hero implements Damageble, Buyble, Moveble, Effectable, Mi
 
     public void brokenItems() {
         this.cleanInv();
+    }
+
+    @Override
+    public void farm(Farmable creep){
+        creep.fightCreep(this);
     }
 
 }

@@ -11,4 +11,7 @@ public class SpiritBreaker extends Hero {
         System.out.println(this.name + " use cheese on " + person.name);
         person.heal(2500);
     }
+    public int goldCost() {
+        return (500 + (int) (Math.random() * this.getHP()));
+    }
 }

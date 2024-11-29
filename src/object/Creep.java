@@ -1,9 +1,9 @@
 package object;
 
-import interfaces.Damageble;
+import interfaces.Damageable;
 import interfaces.Farmable;
 
-public class Creep implements Farmable, Damageble {
+public class Creep implements Farmable, Damageable {
     public int HP;
     private final int MaxHP;
     protected int damage;
@@ -18,7 +18,7 @@ public class Creep implements Farmable, Damageble {
 
 
     @Override
-    public void killCreep(Hero hero) {
+    public void fightCreep(Hero hero) {
         if (!this.isDied()) {
             while ((!hero.isDied()) && (!this.isDied())) {
                 this.damage(hero.damage);

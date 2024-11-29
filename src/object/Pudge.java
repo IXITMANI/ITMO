@@ -14,16 +14,22 @@ public class Pudge extends Hero {
         super.addItem(Items.BATTLE_FURY);
     }
 
-    public void MeatHook(Hero person) {
+    public void meatHook(Hero person) {
         person.setPlace(this.getPlace());
         person.damage(650);
         if (person.isDied()) {
-            this.gold += 2578;
+            this.gold += person.goldCost();
         }
     }
 
-    public void Dismember(Hero person) {
+    public void dismember(Hero person) {
         person.damage(600);
         this.heal((int) (0.25 * super.MaxHP));
+        if (person.isDied()) {
+            this.gold += person.goldCost();
+        }
+    }
+    public int goldCost() {
+        return (500 + (int) (Math.random() * this.getHP()));
     }
 }

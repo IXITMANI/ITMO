@@ -13,6 +13,9 @@ public class Hoodwink extends Hero {
         super.addItem(Items.ARMLET_OF_MORDIGGIAN);
         super.addItem(Items.ARMLET_OF_MORDIGGIAN);
     }
+    public int goldCost() {
+        return (500 + (int) (Math.random() * this.getHP()));
+    }
 }
 
 

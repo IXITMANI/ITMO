@@ -22,17 +22,69 @@ Time = 40min, Ам купил бф => цм сломала шмотки.
 
 public class Main {
     public static void main(String[] args) {
-        CrystalMaiden crystalMaiden = new CrystalMaiden("Crystal Maiden", Places.MID_LINE, 1250, 54);
-        Lina lina = new Lina("Lina", Places.TAVERN, 2000, 59);
-        Luna luna = new Luna("Luna", Places.TOP_LINE, 2900, 56);
-        AntiMage antiMage = new AntiMage("AntiMage", Places.FOREST, 2200, 57);
-        ShadowShaman shadowShaman = new ShadowShaman("Shadow Shaman", Places.FOREST, 2400, 72);
-        Pudge pudge = new Pudge("Pudge", Places.BOTTOM_LINE, 3000, 76);
-        SpiritBreaker spiritBreaker = new SpiritBreaker("Spirit Breaker", Places.TOP_LINE, 2810, 69);
-        MonkeyKing monkeyKing = new MonkeyKing("Monkey King", Places.MID_LINE, 2400, 57);
-        Kez kez = new Kez("Kez", Places.FOREST, 2600, 55);
-        Hoodwink hoodwink = new Hoodwink("Hoodwink", Places.BOTTOM_LINE, 2450, 53);
-        Creep koboldForeman = new Creep(400, 21);
+        CrystalMaiden crystalMaiden = new CrystalMaiden(
+                "Crystal Maiden",
+                Places.MID_LINE,
+                1250,
+                54
+        );
+        Lina lina = new Lina(
+                "Lina",
+                Places.TAVERN,
+                2000,
+                59
+        );
+        Luna luna = new Luna(
+                "Luna",
+                Places.TOP_LINE,
+                2900,
+                56
+        );
+        AntiMage antiMage = new AntiMage(
+                "AntiMage",
+                Places.FOREST,
+                2200,
+                57
+        );
+        ShadowShaman shadowShaman = new ShadowShaman(
+                "Shadow Shaman",
+                Places.FOREST,
+                2400,
+                72
+        );
+        Pudge pudge = new Pudge("Pudge",
+                Places.BOTTOM_LINE,
+                3000,
+                76
+        );
+        SpiritBreaker spiritBreaker = new SpiritBreaker(
+                "Spirit Breaker",
+                Places.TOP_LINE,
+                2810,
+                69
+        );
+        MonkeyKing monkeyKing = new MonkeyKing(
+                "Monkey King",
+                Places.MID_LINE,
+                2400,
+                57
+        );
+        Kez kez = new Kez(
+                "Kez",
+                Places.FOREST,
+                2600,
+                55
+        );
+        Hoodwink hoodwink = new Hoodwink(
+                "Hoodwink",
+                Places.BOTTOM_LINE,
+                2450,
+                53
+        );
+        Creep koboldForeman = new Creep(
+                400,
+                21
+        );
 
         Hero[] dire = {crystalMaiden, lina, luna, antiMage, shadowShaman};
         Hero[] radiant = {pudge, monkeyKing, kez, hoodwink, spiritBreaker};
@@ -40,14 +92,14 @@ public class Main {
 
         crystalMaiden.go(Places.BOTTOM_LINE);
         monkeyKing.miss(crystalMaiden);
-        pudge.MeatHook(crystalMaiden);
+        pudge.meatHook(crystalMaiden);
         spiritBreaker.go(Places.BOTTOM_LINE);
         kez.go(Places.BOTTOM_LINE);
-        crystalMaiden.FreezingField(radiant);
+        crystalMaiden.freezingField(radiant);
         spiritBreaker.UseCheese(pudge);
-        crystalMaiden.Frostbite(spiritBreaker);
-        pudge.Dismember(crystalMaiden);
-        koboldForeman.killCreep(shadowShaman);
+        crystalMaiden.frostbite(spiritBreaker);
+        pudge.dismember(crystalMaiden);
+        shadowShaman.farm(koboldForeman);
         antiMage.brokenItem(Items.POWER_TREADS);
         Maps.MapTimeSkip(characters, 9);
         System.out.println("crystalMaiden has " + crystalMaiden.getGold() + " gold");

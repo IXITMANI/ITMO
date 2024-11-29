@@ -3,7 +3,7 @@ package interfaces;
 import enums.Items;
 import object.Hero;
 
-public interface Buyble {
+public interface Buyable {
     void buy(Items item);
 
     void buyFor(Items item, Hero person);
