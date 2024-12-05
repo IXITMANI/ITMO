@@ -42,3 +42,26 @@ print(filtered_list)
 
 # Номер 3
 print(isu % 36)  # xml json sreda
+fl = open("Расписание.xml", 'r', encoding='UTF-8')
+fl = fl.readlines()[2:-1]
+for i in range(len(fl)):
+    if fl[i].count('<') == 2:
+        if "</" in fl[i]:
+            fl[i] = fl[i][: fl[i].index("</")] + '",' + fl[i][fl[i].rindex('>') + 1:]
+        fl[i] = fl[i].replace('<', '"', 1)
+        fl[i] = fl[i].replace('>', '": "', 1)
+    else:
+        if "</" in fl[i]:
+            fl[i - 1] = fl[i - 1].replace(',', '')
+            fl[i] = fl[i][: fl[i].index("</")] + " }, " + fl[i][fl[i].rindex('>') + 1:]
+        fl[i] = fl[i].replace('<', '"', 1)
+        fl[i] = fl[i].replace('>', '": {', 1)
+
+
+print(fl)
+fl[-1] = fl[-1].replace(',', '')
+with open('new.json', 'w', encoding='UTF-8') as new_fl:
+    new_fl.write('{\n')
+    for line in fl:
+        new_fl.write(line)
+    new_fl.write('}')
