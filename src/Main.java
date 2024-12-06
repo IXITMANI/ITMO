@@ -1,6 +1,7 @@
 import enums.Items;
 import enums.Places;
 import object.*;
+import records.Teams;
 import util.*;
 //Radiant(Pudge, Monkey King, Spirit Breaker, Kez, Hoodwink)
 //dire(Crystal Maiden, Lina, Luna, AntiMage, Shadow Shaman)
@@ -85,27 +86,26 @@ public class Main {
                 400,
                 21
         );
-
         Hero[] dire = {crystalMaiden, lina, luna, antiMage, shadowShaman};
         Hero[] radiant = {pudge, monkeyKing, kez, hoodwink, spiritBreaker};
         Hero[] characters = {crystalMaiden, lina, luna, antiMage, shadowShaman, pudge, monkeyKing, kez, hoodwink, spiritBreaker};
-
+        Teams teams = new Teams(dire, radiant, characters);
         crystalMaiden.go(Places.BOTTOM_LINE);
         monkeyKing.miss(crystalMaiden);
         pudge.meatHook(crystalMaiden);
         spiritBreaker.go(Places.BOTTOM_LINE);
         kez.go(Places.BOTTOM_LINE);
-        crystalMaiden.freezingField(radiant);
+        crystalMaiden.freezingField(teams.radiant());
         spiritBreaker.UseCheese(pudge);
         crystalMaiden.frostbite(spiritBreaker);
         pudge.dismember(crystalMaiden);
         shadowShaman.farm(koboldForeman);
         antiMage.brokenItem(Items.POWER_TREADS);
-        Maps.MapTimeSkip(characters, 9);
+        Maps.MapTimeSkip(teams.characters(), 9);
         System.out.println("crystalMaiden has " + crystalMaiden.getGold() + " gold");
         crystalMaiden.buyFor(Items.MOONSHARD, lina);
         crystalMaiden.buyFor(Items.MOONSHARD, luna);
-        Maps.MapTimeSkip(characters, 1);
+        Maps.MapTimeSkip(teams.characters(), 1);
         if (Maps.getTime() == 40) {
             antiMage.buy(Items.BATTLE_FURY);
             crystalMaiden.brokenItems();
