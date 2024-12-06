@@ -3,6 +3,7 @@ package object;
 import enums.Effects;
 import enums.Items;
 import enums.Places;
+import exceptions.IsNotDeadException;
 import interfaces.*;
 import util.Maps;
 
@@ -147,11 +148,13 @@ public abstract class Hero implements Damageable, Buyable, Moveable, Effectable,
     }
 
     @Override
-    public void buyBack() {
+    public void buyBack() throws IsNotDeadException {
         if ((this.gold > (int) (25 * 25 * 1.5) + Maps.getTime() * 155) && (this.getHP() == 0)) {
             System.out.println(this.name + " жмет байбек");
             this.gold -= (int) ((25 * 25 * 1.5) + Maps.getTime() * 15);
             this.revive();
+        } else {
+            throw new IsNotDeadException("Is not dead");
         }
     }
 

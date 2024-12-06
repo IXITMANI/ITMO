@@ -1,6 +1,7 @@
 package interfaces;
 
 import enums.Items;
+import exceptions.IsNotDeadException;
 import object.Hero;
 
 public interface Buyable {
@@ -8,5 +9,5 @@ public interface Buyable {
 
     void buyFor(Items item, Hero person);
 
-    void buyBack();
+    void buyBack() throws IsNotDeadException;
 }

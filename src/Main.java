@@ -1,5 +1,6 @@
 import enums.Items;
 import enums.Places;
+import exceptions.IsNotDeadException;
 import object.*;
 import records.Teams;
 import util.*;
@@ -22,7 +23,7 @@ Time = 40min, Ам купил бф => цм сломала шмотки.
 */
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IsNotDeadException {
         CrystalMaiden crystalMaiden = new CrystalMaiden(
                 "Crystal Maiden",
                 Places.MID_LINE,
@@ -110,6 +111,7 @@ public class Main {
             antiMage.buy(Items.BATTLE_FURY);
             crystalMaiden.brokenItems();
         }
+//        crystalMaiden.buyBack();
 
     }
 }
