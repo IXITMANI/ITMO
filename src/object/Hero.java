@@ -23,7 +23,6 @@ public abstract class Hero implements Damageable, Buyable, Moveable, Effectable,
     private int itemIndex = 0;
 
 
-
     public Hero(String name, Places place, int HP, int damage) {
         this.name = name;
         this.place = place;
@@ -46,7 +45,7 @@ public abstract class Hero implements Damageable, Buyable, Moveable, Effectable,
     }
 
     @Override
-    public String toString(){
+    public String toString() {
         return this.name + " in " + this.getPlace() + " have HP = " + this.getHP() + " have gold = " + this.getGold();
     }
 
@@ -149,12 +148,14 @@ public abstract class Hero implements Damageable, Buyable, Moveable, Effectable,
 
     @Override
     public void buyBack() throws IsNotDeadException {
-        if ((this.gold > (int) (25 * 25 * 1.5) + Maps.getTime() * 155) && (this.getHP() == 0)) {
-            System.out.println(this.name + " жмет байбек");
-            this.gold -= (int) ((25 * 25 * 1.5) + Maps.getTime() * 15);
-            this.revive();
+        if (this.isDied()) {
+            if (this.gold > (int) (25 * 25 * 1.5) + Maps.getTime() * 155) {
+                System.out.println(this.name + " жмет байбек");
+                this.gold -= (int) ((25 * 25 * 1.5) + Maps.getTime() * 15);
+                this.revive();
+            }
         } else {
-            throw new IsNotDeadException("Is not dead");
+            throw new IsNotDeadException(this.getName());
         }
     }
 
@@ -183,7 +184,7 @@ public abstract class Hero implements Damageable, Buyable, Moveable, Effectable,
     }
 
     @Override
-    public void farm(Farmable creep){
+    public void farm(Farmable creep) {
         creep.fightCreep(this);
     }
 

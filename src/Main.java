@@ -111,7 +111,11 @@ public class Main {
             antiMage.buy(Items.BATTLE_FURY);
             crystalMaiden.brokenItems();
         }
-//        crystalMaiden.buyBack();
+        try {
+            crystalMaiden.buyBack();
+        } catch (IsNotDeadException error){
+            System.out.println(error.getMessage());
+        }
 
     }
 }

@@ -1,7 +1,13 @@
 package exceptions;
 
 public class IsNotDeadException extends Exception {
-    public IsNotDeadException(String error){
-        super(error);
+    private final String name;
+    public IsNotDeadException(String name){
+        this.name = name;
+    }
+
+    @Override
+    public String getMessage(){
+        return name + " is not dead";
     }
 }
