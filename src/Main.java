@@ -110,5 +110,6 @@ public class Main {
             antiMage.buy(Items.BATTLE_FURY);
             crystalMaiden.brokenItems();
         }
+
     }
 }
