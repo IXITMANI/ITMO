@@ -56,4 +56,20 @@ public class City {
                 + governor.getHeight();
 
     }
+
+    public double getGovernorHeight() {
+        return governor.getHeight();
+    }
+
+    public Integer getTelephoneCode() {
+        return telephoneCode;
+    }
+
+    public Double getMetersAboveSeaLevel() {
+        return metersAboveSeaLevel;
+    }
+
+    public int getStandardOfLivingLevel() {
+        return standardOfLiving.getLevel();
+    }
 }
