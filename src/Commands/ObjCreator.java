@@ -16,46 +16,81 @@ public class ObjCreator {
                 System.out.println("Имя не должно быть пустое");
                 return null;
             } else {
+                int[] coordinates = new int[2];
+                long area;
+                Long population;
+                Double metersAboveSeaLevel;
+                Integer telephoneCode;
+                Government government;
+                StandardOfLiving standardOfLiving;
+                double governor;
                 String[] coord = CityReader.readLine().trim().split(" ");
                 try {
-                    Integer[] coordinates = new Integer[]{Integer.parseInt(coord[0]), Integer.parseInt(coord[1])};
+                    coordinates = new int[]{Integer.parseInt(coord[0]), Integer.parseInt(coord[1])};
                 } catch (ArrayIndexOutOfBoundsException e) {
                     System.out.println("Нужно ввести 2 координаты через пробел(в скрипте тоже)");
+                    return null;
+                } catch (NumberFormatException e) {
+                    System.out.println("Введи координаты нормально");
                     return null;
                 } catch (NullPointerException e) {
                     System.out.println("Координаты должны быть числами");
                     return null;
                 }
                 try {
-                    long area = Long.parseLong(CityReader.readLine().trim());
+                    area = Long.parseLong(CityReader.readLine().trim());
                 } catch (NullPointerException e) {
                     System.out.println("Площадь должна быть числом");
                     return null;
-                }
-                try {
-                    Long population = Long.parseLong(CityReader.readLine().trim());
-                } catch (NullPointerException e) {
-                    System.out.println("Население должно быть числом");
+                } catch (NumberFormatException e) {
+                    System.out.println("Введи площадь нормально");
                     return null;
                 }
                 try {
-                    Double metersAboveSeaLevel = Double.parseDouble(CityReader.readLine().trim());
+                    population = Long.parseLong(CityReader.readLine().trim());
                 } catch (NullPointerException e) {
                     System.out.println("Население должно быть числом");
+                    return null;
+                } catch (NumberFormatException e) {
+                    System.out.println("Введи население нормально");
                     return null;
                 }
                 try {
-                    Integer telephoneCode = Integer.parseInt(CityReader.readLine().trim());
+                    String nullChecker = CityReader.readLine().trim();
+                    if (nullChecker == null) {
+                        metersAboveSeaLevel = null;
+                    } else {
+                        metersAboveSeaLevel = Double.parseDouble(nullChecker);
+                    }
                 } catch (NullPointerException e) {
-                    System.out.println("Население должно быть числом");
+                    System.out.println("Высота над уровнем моря должна быть числом");
+                    return null;
+                } catch (NumberFormatException e) {
+                    System.out.println("Введи высоту нормально нормально");
                     return null;
                 }
-                Government government = Government.valueOf(CityReader.readLine().trim());
-                StandardOfLiving standardOfLiving = StandardOfLiving.valueOf(CityReader.readLine().trim());
-                double governor = Double.parseDouble(CityReader.readLine().trim());
-
-                City city = new City(id, name, new int[]{},
-                        ZonedDateTime.now(), area, population, metersAboveSeaLevel, telephoneCode, government, standardOfLiving, governor);
+                try {
+                    telephoneCode = Integer.parseInt(CityReader.readLine().trim());
+                } catch (NullPointerException e) {
+                    System.out.println("Телефонный код должен быть числом");
+                    return null;
+                } catch (NumberFormatException e) {
+                    System.out.println("Введи телефонный код нормально");
+                    return null;
+                }
+                government = Government.values()[Integer.parseInt(CityReader.readLine().trim()) - 1];
+                standardOfLiving = StandardOfLiving.values()[Integer.parseInt(CityReader.readLine().trim()) - 1];
+                try {
+                    governor = Double.parseDouble(CityReader.readLine().trim());
+                } catch (NullPointerException e) {
+                    System.out.println("Телефонный код должен быть числом");
+                    return null;
+                } catch (NumberFormatException e) {
+                    System.out.println("Введи телефонный код нормально");
+                    return null;
+                }
+                City city = new City(id, name, coordinates, ZonedDateTime.now(), area, population,
+                        metersAboveSeaLevel, telephoneCode, government, standardOfLiving, governor);
                 return city;
             }
         } else {

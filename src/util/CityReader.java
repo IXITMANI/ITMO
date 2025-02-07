@@ -3,6 +3,9 @@ package util;
 import Commands.Invoker;
 
 import java.io.*;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class CityReader {
@@ -11,7 +14,8 @@ public class CityReader {
     private static final Scanner scanner = new Scanner(System.in);
     private static String[] fileText;
     private static String fileName;
-    private static int index = -1;
+    private static int counter = 0;
+    private static boolean hasNext = true;
 
     public static String consoleReadLine() {
         return scanner.nextLine();
@@ -21,7 +25,7 @@ public class CityReader {
         scriptFlag = true;
         fileName = Invoker.getParameter();
         try {
-            BufferedInputStream file = new BufferedInputStream(new FileInputStream(System.getProperty("user.dir") +"\\src\\" + fileName));
+            BufferedInputStream file = new BufferedInputStream(new FileInputStream(System.getProperty("user.dir") + "\\src\\" + fileName));
             fileText = new String(buffer, 0, file.read(buffer)).split("\n");
         } catch (FileNotFoundException e) {
             System.out.println("Такого файла не существует");
@@ -29,12 +33,22 @@ public class CityReader {
             System.out.println("Не удалось считать файл");
         }
     }
-    public static String readLine(){
-        index += 1;
-        return fileText[index];
+
+    public static String readLine() {
+        if (counter + 2 > fileText.length){
+            hasNext = false;
+        }
+        String line = fileText[counter].trim().replace("\r", "").replace("\n", "");
+        counter += 1;
+        return line;
     }
-    public static String[] readLines(){
+
+    public static String[] readLines() {
         return fileText;
+    }
+
+    public static boolean fileHasNext() {
+        return hasNext;
     }
 
     public static boolean consoleHasNext() {

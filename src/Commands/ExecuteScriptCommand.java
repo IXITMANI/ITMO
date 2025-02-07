@@ -13,9 +13,10 @@ public class ExecuteScriptCommand implements Command {
     public void execute() {
         CityReader.readFile();
         String[] fileText = CityReader.readLines();
-        for (var index = 0; index < fileText.length; index++) {
-            if (!fileText[index].contains("execute_script "+ CityReader.getFileName())){
-                Invoker.executionCommand(fileText[index].replace("\r", "   ").trim());
+        while (CityReader.fileHasNext()) {
+            String line = CityReader.readLine();
+            if (!line.contains("execute_script "+ CityReader.getFileName())){
+                Invoker.executionCommand(line);
             }
         }
     }
