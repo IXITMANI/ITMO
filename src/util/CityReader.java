@@ -6,18 +6,19 @@ import java.io.*;
 import java.util.Scanner;
 
 public class CityReader {
+    public static boolean scriptFlag = false;
     private static final byte[] buffer = new byte[2048];
     private static final Scanner scanner = new Scanner(System.in);
     private static String[] fileText;
     private static String fileName;
-    private static int index;
+    private static int index = -1;
 
-    public static String ConsoleReadLine() {
+    public static String consoleReadLine() {
         return scanner.nextLine();
     }
 
-    public static void ReadFile() {
-        index = 0;
+    public static void readFile() {
+        scriptFlag = true;
         fileName = Invoker.getParameter();
         try {
             BufferedInputStream file = new BufferedInputStream(new FileInputStream(System.getProperty("user.dir") +"\\src\\" + fileName));
@@ -28,12 +29,15 @@ public class CityReader {
             System.out.println("Не удалось считать файл");
         }
     }
-
-    public static String[] FileReadLines() {
+    public static String readLine(){
+        index += 1;
+        return fileText[index];
+    }
+    public static String[] readLines(){
         return fileText;
     }
 
-    public static boolean ConsoleHasNext() {
+    public static boolean consoleHasNext() {
         return scanner.hasNext();
     }
 

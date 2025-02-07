@@ -10,7 +10,7 @@ public class HelpCommand implements Command {
         this.cm = cm;
         this.commands = commands;
     }
-
+    @Override
     public String descr() {
         return "help - Помощь";
     }

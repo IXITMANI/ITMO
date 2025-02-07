@@ -11,10 +11,11 @@ public class ExecuteScriptCommand implements Command {
 
     @Override
     public void execute() {
-        String[] fileText = CityReader.FileReadLines();
+        CityReader.readFile();
+        String[] fileText = CityReader.readLines();
         for (var index = 0; index < fileText.length; index++) {
             if (!fileText[index].contains("execute_script "+ CityReader.getFileName())){
-                Invoker.executionCommand(fileText[index].trim());
+                Invoker.executionCommand(fileText[index].replace("\r", "   ").trim());
             }
         }
     }

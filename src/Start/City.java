@@ -47,17 +47,13 @@ public class City {
     public long getId() {
         return id;
     }
-    public void printFields() {
-        System.out.println("id: " + id);
-        System.out.println("name: " + name);
-        System.out.println("coordinates: " + coordinates.toString());
-        System.out.println("creationDate: " + creationDate);
-        System.out.println("area: " + area);
-        System.out.println("population: " + population);
-        System.out.println("metersAboveSeaLevel: " + metersAboveSeaLevel);
-        System.out.println("telephoneCode: " + telephoneCode);
-        System.out.println("government: " + government);
-        System.out.println("standardOfLiving: " + standardOfLiving);
-        System.out.println("governor: " + governor.getHeight());
+    @Override
+    public String toString() {
+        return "id: " + id + "\n"+ "name: " + name + "\n"+ "coordinates: " + coordinates.toString() + "\n"+
+                "creationDate: " + creationDate + "\n"+ "area: " + area + "\n"+ "population: " + population +
+                "\n"+ "metersAboveSeaLevel: " + metersAboveSeaLevel + "\n"+ "telephoneCode: " + telephoneCode +
+                "\n"+ "government: " + government + "\n"+ "standardOfLiving: " + standardOfLiving + "\n"+ "governor: "
+                + governor.getHeight();
+
     }
 }

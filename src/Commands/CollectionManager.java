@@ -38,8 +38,8 @@ public class CollectionManager {
         cityList.set(index, city);
     }
 
-    public void show(int index) {
-        cityList.get(index).printFields();
+    public String show(int index) {
+        return cityList.get(index).toString();
     }
 
     public void remove(int index) {

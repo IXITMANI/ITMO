@@ -12,12 +12,14 @@ public class UpdateCommand implements Command {
     @Override
     public void execute() {
         int id = Integer.parseInt(Invoker.getParameter());
-        City city = ObjCreator.create(id);
         int index = cm.searchId(id);
         if (index == -1) {
             System.out.println("элемент с таким id не найден");
         } else {
-            cm.update(index, city);
+            City city = ObjCreator.create(id);
+            if (city != null) {
+                cm.update(index, city);
+            }
         }
     }
 

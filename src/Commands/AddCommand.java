@@ -13,8 +13,10 @@ public class AddCommand implements Command {
     public void execute() {
         long id = IdGenerator.generateId();
         City city = ObjCreator.create(id);
-        cm.add(city);
-        System.out.println("Объект успешно добавлен!");
+        if (city != null){
+            cm.add(city);
+            System.out.println("Объект успешно добавлен!");
+        }
     }
 
     @Override

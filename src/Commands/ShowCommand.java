@@ -13,7 +13,7 @@ public class ShowCommand implements Command {
         } else {
             System.out.println("---------------------------");
             for (int i = 0; i < cm.size(); ++i) {
-                cm.show(i);
+                System.out.println(cm.show(i));
                 System.out.println("---------------------------");
             }
         }
