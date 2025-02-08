@@ -36,7 +36,7 @@ public class CityReader {
         scriptFlag = true;
         fileName = Invoker.getParameter();
         try {
-            BufferedInputStream file = new BufferedInputStream(new FileInputStream(System.getProperty("user.dir") + "\\src\\" + fileName));
+            BufferedInputStream file = new BufferedInputStream(new FileInputStream(System.getProperty("user.dir") + fileName));
             fileText = new String(buffer, 0, file.read(buffer)).split("\n");
         } catch (FileNotFoundException e) {
             System.out.println("Такого файла не существует");
